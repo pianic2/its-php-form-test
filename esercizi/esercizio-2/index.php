@@ -1,12 +1,14 @@
 ﻿<!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Esercizio 2 - Calcolatore</title>
+    <title>Esercizio 1 - Registrazione Utente</title>
     <link rel="stylesheet" href="/css/min.core.css">
     <link rel="stylesheet" href="/css/project-theme.css">
 </head>
+
 <body>
     <?php include 'header.php'; ?>
 
@@ -19,8 +21,25 @@
 
             <form class="form" action="formresult.php" method="post">
                 <div class="form__group">
-                    <label class="form__label" for="input_principale">Valore</label>
-                    <input class="form__control" type="text" id="input_principale" name="input_principale" placeholder="Scrivi qualcosa...">
+                    <label class="form__label" for="numero1">Numero 1</label>
+                    <input class="form__control" type="number" id="numero1" name="numero1"
+                        placeholder="Scrivi un numero...">
+                </div>
+
+                <div class="form__group">
+                    <label class="form__label" for="operazione">Operazione</label>
+                    <select name="operazione" id="operazione" class="form__control">
+                        <option value="somma">Somma</option>
+                        <option value="sottrazione">Sottrazione</option>
+                        <option value="moltiplicazione">Moltiplicazione</option>
+                        <option value="divisione">Divisione</option>
+                    </select>
+                </div>
+
+                <div class="form__group">
+                    <label class="form__label" for="numero2">Numero 2</label>
+                    <input class="form__control" type="number" id="numero2" name="numero2"
+                        placeholder="Scrivi un numero...">
                 </div>
 
                 <div class="form__actions">
@@ -32,6 +51,5 @@
 
     <?php include 'footer.php'; ?>
 </body>
+
 </html>
-
-
