@@ -28,7 +28,26 @@ if [ ! -d "$TARGET_DIR" ]; then
   exit 1
 fi
 
-rm -rf /var/www/html/*
-cp -R "$TARGET_DIR"/. /var/www/html/
+# Punta Apache direttamente all'esercizio selezionato.
+sed -ri "s|/var/www/html|$TARGET_DIR|g" /etc/apache2/sites-available/000-default.conf /etc/apache2/apache2.conf
+
+# Espone asset condivisi da path assoluti.
+cat >/etc/apache2/conf-available/shared-assets.conf <<'EOF'
+Alias /css /var/www/css
+<Directory /var/www/css>
+    Options Indexes FollowSymLinks
+    AllowOverride None
+    Require all granted
+</Directory>
+
+Alias /js /var/www/js
+<Directory /var/www/js>
+    Options Indexes FollowSymLinks
+    AllowOverride None
+    Require all granted
+</Directory>
+EOF
+
+a2enconf shared-assets >/dev/null
 
 exec "$@"

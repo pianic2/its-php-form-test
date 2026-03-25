@@ -3,6 +3,7 @@ FROM php:8.2-apache
 WORKDIR /var/www/html
 
 COPY esercizi/ /var/www/esercizi/
+COPY css/ /var/www/css
 COPY docker/entrypoint.sh /usr/local/bin/entrypoint.sh
 
 RUN chmod +x /usr/local/bin/entrypoint.sh \

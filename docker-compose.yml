@@ -4,5 +4,18 @@ services:
     container_name: esercizi
     environment:
       NUMERO: ${NUMERO:-1}
+    volumes:
+      - ./esercizi:/var/www/esercizi
+      - ./css:/var/www/css
+      - ./js:/var/www/js
     ports:
       - "8080:80"
+  livereload:
+    image: node:20-alpine
+    container_name: esercizi-livereload
+    working_dir: /workspace
+    command: sh -c "npm i -g livereload && livereload /workspace/esercizi /workspace/css /workspace/js --port 35729 --delay 100"
+    volumes:
+      - ./:/workspace
+    ports:
+      - "35729:35729"
