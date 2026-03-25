@@ -13,6 +13,29 @@ function validate_mood($mood)
     return in_array($mood, $valid_moods, true);
 }
 
+function generate_message($mood)
+{
+    $messages = [
+        'felice' => [
+            1=> 'Oggi è una giornata fantastica! Sfrutta al massimo la tua felicità.',
+            2=> 'Sempre meglio vedere il bicchiere mezzo pieno.',
+            3=> 'Che bello vederti così! Continua a sorridere e contagia gli altri con la tua gioia.',
+        ],
+        'triste'=> [
+            1=> 'Piove e tira vento.',
+            2=> 'Ci vuole un pezzo di torta.',
+            3=> 'Non preoccuparti, andrà meglio domani.',
+        ],
+        'arrabbiato'=> [
+            1=> 'Calmati e respira profondamente.',
+            2=> 'Fai una passeggiata per schiarirti le idee.',
+            3=> 'Parla con qualcuno di fidato per sfogarti.',
+        ],
+    ];
+
+    return $messages[$mood][array_rand([1,2,3])] ?? '';
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -74,9 +97,9 @@ function validate_mood($mood)
                     
                 if (isset($nome, $mood) && validate_name($nome) && validate_mood($mood)) {
                     if ($messaggio_formale) {
-                        echo '<p><strong>Messaggio generato:</strong> Buonasera Messere ' . htmlspecialchars($nome) . ', il suo mood attuale è ' . htmlspecialchars($mood) . '.</p>';
+                        echo '<p><strong>Messaggio generato:</strong> Buonasera Messere ' . htmlspecialchars($nome) . ', ' . generate_message($mood) . '</p>';
                     } else {
-                        echo '<p><strong>Messaggio generato:</strong> Ciao ' . htmlspecialchars($nome) . ', il tuo mood è ' . htmlspecialchars($mood) . '.</p>';
+                        echo '<p><strong>Messaggio generato:</strong> Ciao ' . htmlspecialchars($nome) . ', ' . generate_message($mood) . '</p>';
                     }
                     
                     switch ($mood) {
