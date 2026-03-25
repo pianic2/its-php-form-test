@@ -1,0 +1,8 @@
+services:
+  esercizi:
+    build: .
+    container_name: esercizi
+    environment:
+      NUMERO: ${NUMERO:-1}
+    ports:
+      - "8080:80"
