@@ -12,7 +12,7 @@ function validate_operation($operation)
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Risultato - Esercizio 1 - Registrazione Utente</title>
+    <title>Risultato - Esercizio 2 - Calcolatrice</title>
     <link rel="stylesheet" href="/css/min.core.css">
     <link rel="stylesheet" href="/css/project-theme.css">
 </head>
@@ -44,12 +44,6 @@ function validate_operation($operation)
                 <h2 class="card__title">Validazione dati:</h2>
             </div>
             <div class="card__body">
-                <!-- 
-                    Aggiunta di una sezione per la validazione dei dati
-                    Usato:
-                    - get per validare l'email: https://www.php.net/manual/en/function.filter-var.php#:~:text=%3C%3Fphp%0Avar_dump(filter_var(%27bob%40example.com%27%2C%20FILTER_VALIDATE_EMAIL))%3B%0Avar_dump(filter_var(%27https%3A//example.com%27%2C%20FILTER_VALIDATE_URL%2C%20FILTER_FLAG_PATH_REQUIRED))%3B%0A%3F%3E    
-                    - is_numeric per validare l'email: https://www.php.net/manual/en/function.filter-var.php#:~:text=%3C%3Fphp%0Avar_dump(filter_var(%27bob%40example.com%27%2C%20FILTER_VALIDATE_EMAIL))%3B%0Avar_dump(filter_var(%27https%3A//example.com%27%2C%20FILTER_VALIDATE_URL%2C%20FILTER_FLAG_PATH_REQUIRED))%3B%0A%3F%3E    
-                -->
                 <p><strong>Numero 1:</strong> <?php echo is_numeric($_POST['numero1'] ?? '') ? '<span class="badge badge--success">Sì</span>' : '<span class="badge badge--error">No</span>'; ?></p>
                 <p><strong>Numero 2:</strong> <?php echo is_numeric($_POST['numero2'] ?? '') ? '<span class="badge badge--success">Sì</span>' : '<span class="badge badge--error">No</span>'; ?></p>
                 <p><strong>Operazione:</strong> <?php echo validate_operation($_POST['operazione'] ?? '') ? '<span class="badge badge--success">Sì</span>' : '<span class="badge badge--error">No</span>'; ?></p>
