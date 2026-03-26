@@ -22,29 +22,29 @@
             <form class="form" action="formresult.php" method="post">
                 <div class="form__group">
                     <label class="form__label" for="nome">Nome</label>
-                    <input class="form__control" type="text" id="nome" name="nome" placeholder="Scrivi qualcosa...">
+                    <input class="form__control" type="text" id="nome" name="nome" placeholder="Scrivi il tuo nome..." required>
                 </div>
 
                 <div class="form__group">
                     <label class="form__label" for="cognome">Cognome</label>
-                    <input class="form__control" type="text" id="cognome" name="cognome"
-                        placeholder="Scrivi qualcosa...">
+                    <input class="form__control" type="text" id="cognome" name="cognome" placeholder="Scrivi il tuo cognome..." required>
                 </div>
 
                 <div class="form__group">
                     <label class="form__label" for="email">Email</label>
-                    <input class="form__control" type="email" id="email" name="email" placeholder="Scrivi qualcosa...">
+                    <input class="form__control" type="email" id="email" name="email" placeholder="Scrivi la tua email..." required>
                 </div>
 
 
                 <div class="form__group">
                     <label class="form__label" for="eta">Età</label>
-                    <input class="form__control" type="number" id="eta" name="eta" placeholder="Scrivi qualcosa...">
+                    <input class="form__control" type="number" id="eta" name="eta" placeholder="Scrivi la tua età..." required min="0" max="120">
                 </div>
 
                 <div class="form__group">
                     <label class="form__label" for="ruolo">Ruolo</label>
-                    <select name="ruolo" id="ruolo" class="form__control">
+                    <select name="ruolo" id="ruolo" class="form__control" required>
+                        <option value="" disabled selected>Seleziona un ruolo</option>
                         <option value="studente">Studente</option>
                         <option value="insegnante">Insegnante</option>
                         <option value="admin">Amministratore</option>
