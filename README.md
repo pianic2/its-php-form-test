@@ -57,3 +57,6 @@ docker compose down
 3. Esercizio 3: Mini login senza database
 4. Esercizio 4: Generatore di messaggi personalizzati
 5. Esercizio 5: Analizzatore di testo
+
+### classi, Ereditarietà e Modificatori di Accesso
+5. Esercizio 6: Classe Studente
